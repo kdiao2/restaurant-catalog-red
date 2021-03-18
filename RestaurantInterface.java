@@ -1,0 +1,18 @@
+// --== CS400 File Header Information ==--
+// Name: <Kenneth Diao>
+// Email: <kdiao2@wisc.edu>
+// Team: <Red>
+// Group: <KF>
+// TA: <Keren Chen>
+// Lecturer: <Gary Dahl>
+// Notes to Grader: none
+
+public interface RestaurantInterface extends Comparable<RestaurantInterface> {
+	public Integer getRank();
+	public String getRestaurantName();
+	public Integer getNumSales();
+	public String getCity();
+	public String getState();
+	public Double getAvgCheck();
+	public Integer numMealsServed();
+}
