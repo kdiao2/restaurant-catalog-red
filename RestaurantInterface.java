@@ -11,8 +11,8 @@ public interface RestaurantInterface extends Comparable<RestaurantInterface> {
 	public Integer getRank();
 	public String getRestaurantName();
 	public Integer getNumSales();
+	public Integer getAvgCheck();
 	public String getCity();
 	public String getState();
-	public Double getAvgCheck();
 	public Integer numMealsServed();
 }

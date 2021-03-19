@@ -18,18 +18,18 @@ public class Restaurant implements RestaurantInterface {
 	private Integer rank;
 	private String name;
 	private Integer sales;
+	private Integer avgCheck;
 	private String city;
 	private String state;
-	private Double avgCheck;
 	private Integer mealsServed;
 	
-	public Restaurant(String rank, String name, String sales, String city, String state, String avgCheck, String mealsServed) {
+	public Restaurant(String rank, String name, String sales, String avgCheck, String city, String state, String mealsServed) {
 		this.rank = Integer.parseInt(rank);
 		this.name = name;
 		this.sales = Integer.parseInt(sales);
+		this.avgCheck = Integer.parseInt(avgCheck);
 		this.city = city;
 		this.state = state;
-		this.avgCheck = Double.parseDouble(avgCheck);
 		this.mealsServed = Integer.parseInt(mealsServed);
 	}
 	
@@ -57,6 +57,11 @@ public class Restaurant implements RestaurantInterface {
 	}
 
 	@Override
+	public Integer getAvgCheck() {
+		return avgCheck;
+	}
+	
+	@Override
 	public String getCity() {
 		return city;
 	}
@@ -64,11 +69,6 @@ public class Restaurant implements RestaurantInterface {
 	@Override
 	public String getState() {
 		return state;
-	}
-
-	@Override
-	public Double getAvgCheck() {
-		return avgCheck;
 	}
 
 	@Override
