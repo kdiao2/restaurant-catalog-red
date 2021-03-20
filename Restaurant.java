@@ -24,13 +24,23 @@ public class Restaurant implements RestaurantInterface {
 	private Integer mealsServed;
 	
 	public Restaurant(String rank, String name, String sales, String avgCheck, String city, String state, String mealsServed) {
-		this.rank = Integer.parseInt(rank);
+		this.rank = parseInt(rank);
 		this.name = name;
-		this.sales = Integer.parseInt(sales);
-		this.avgCheck = Integer.parseInt(avgCheck);
+		this.sales = parseInt(sales);
+		this.avgCheck = parseInt(avgCheck);
 		this.city = city;
 		this.state = state;
-		this.mealsServed = Integer.parseInt(mealsServed);
+		this.mealsServed = parseInt(mealsServed);
+	}
+	
+	private int parseInt(String str) {
+		if(str.contains("e")) {
+			String num = str.substring(0, str.indexOf("e"));
+			String pow = str.substring(str.indexOf("e") + 1);
+			int realInteger = (int) (Double.parseDouble(num) * Math.pow(10.0, Double.parseDouble(pow)));
+			return realInteger;
+		}
+		return Integer.parseInt(str);
 	}
 	
 	/**
@@ -40,6 +50,19 @@ public class Restaurant implements RestaurantInterface {
 	@Override
 	public int compareTo(RestaurantInterface o) {
 		return o.getRank() - getRank();
+	}
+	
+	public boolean equals(RestaurantInterface o) {
+		if(getRank().equals(o.getRank()) &&
+				getRestaurantName().equals(o.getRestaurantName()) &&
+				getNumSales().equals(o.getNumSales()) &&
+				getAvgCheck().equals(o.getAvgCheck()) &&
+				getCity().equals(o.getCity()) &&
+				getState().equals(o.getState()) &&
+				numMealsServed().equals(o.numMealsServed())) {
+			return true;
+		}
+		return false;
 	}
 
 	@Override

@@ -8,6 +8,7 @@
 // Notes to Grader: none
 
 public interface RestaurantInterface extends Comparable<RestaurantInterface> {
+	public boolean equals(RestaurantInterface o);
 	public Integer getRank();
 	public String getRestaurantName();
 	public Integer getNumSales();
